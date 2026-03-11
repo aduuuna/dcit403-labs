@@ -1,2 +1,224 @@
 === E-Commerce Agent Simulation Started: 2026-03-11 03:17:19.511972 ===
 
+[2026-03-11 03:24:51] [CustomerAgent] CustomerAgent started and ready.
+[2026-03-11 03:25:16] [InventoryAgent] InventoryAgent started and ready.
+[2026-03-11 03:25:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:25:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:25:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:25:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:25:40] [RecommendationAgent] RecommendationAgent started and ready.
+[2026-03-11 03:25:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:25:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:26:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:26:01] [InventoryAgent] All stock levels healthy.
+
+=== Simulation run: 2026-03-11 03:26:09.789924 ===
+[2026-03-11 03:26:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:26:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:26:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:26:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:26:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:26:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:27:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:27:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:27:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:27:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:27:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:27:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:27:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:27:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:28:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:28:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:28:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:28:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:28:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:28:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:28:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:28:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:29:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:29:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:29:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:29:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:29:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:29:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:29:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:29:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:30:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:30:01] [InventoryAgent] All stock levels healthy.
+
+=== Simulation run: 2026-03-11 03:30:12.647351 ===
+[2026-03-11 03:30:12] [CustomerAgent] Order received — Customer: customer_ama, Product: 'Wireless Headphones', ID: ORD-20260311033012884968
+[2026-03-11 03:30:12] [CustomerAgent] Stock check sent for order ORD-20260311033012884968.
+[2026-03-11 03:30:12] [InventoryAgent] Stock check — Product: 'Wireless Headphones', Qty: 1, Order: ORD-20260311033012884968
+[2026-03-11 03:30:12] [InventoryAgent] Confirmed 'Wireless Headphones'. Deducted 1. Remaining: 1266
+[2026-03-11 03:30:12] [CustomerAgent] Order ORD-20260311033012884968 CONFIRMED. Remaining stock: 1266
+[2026-03-11 03:30:12] [RecommendationAgent] Order event — Customer: customer_ama, Product: 'Wireless Headphones', Order: ORD-20260311033012884968
+[2026-03-11 03:30:12] [RecommendationAgent] Recommending to customer_ama: Phone Stand, Portable Charger, Carry Case
+[2026-03-11 03:30:12] [RecommendationAgent] Recommendation sent for order ORD-20260311033012884968.
+[2026-03-11 03:30:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:30:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:30:16] [CustomerAgent] Order received — Customer: customer_kofi, Product: 'Gaming Keyboard', ID: ORD-20260311033016858556
+[2026-03-11 03:30:16] [CustomerAgent] Stock check sent for order ORD-20260311033016858556.
+[2026-03-11 03:30:16] [InventoryAgent] Stock check — Product: 'Gaming Keyboard', Qty: 1, Order: ORD-20260311033016858556
+[2026-03-11 03:30:16] [InventoryAgent] Confirmed 'Gaming Keyboard'. Deducted 1. Remaining: 559
+[2026-03-11 03:30:16] [CustomerAgent] Order ORD-20260311033016858556 CONFIRMED. Remaining stock: 559
+[2026-03-11 03:30:16] [RecommendationAgent] Order event — Customer: customer_kofi, Product: 'Gaming Keyboard', Order: ORD-20260311033016858556
+[2026-03-11 03:30:16] [RecommendationAgent] Recommending to customer_kofi: Gaming Mouse, Mouse Pad, Monitor Light
+[2026-03-11 03:30:16] [RecommendationAgent] Recommendation sent for order ORD-20260311033016858556.
+[2026-03-11 03:30:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:30:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:30:39] [CustomerAgent] Order received — Customer: customer_ama, Product: 'Laptop Stand', ID: ORD-20260311033039868898
+[2026-03-11 03:30:39] [CustomerAgent] Stock check sent for order ORD-20260311033039868898.
+[2026-03-11 03:30:39] [CustomerAgent] Order received — Customer: customer_kofi, Product: 'Wireless Mouse', ID: ORD-20260311033039870567
+[2026-03-11 03:30:39] [CustomerAgent] Stock check sent for order ORD-20260311033039870567.
+[2026-03-11 03:30:39] [CustomerAgent] Order received — Customer: customer_abena, Product: 'Portable Charger', ID: ORD-20260311033039872403
+[2026-03-11 03:30:39] [CustomerAgent] Stock check sent for order ORD-20260311033039872403.
+[2026-03-11 03:30:39] [InventoryAgent] Stock check — Product: 'Laptop Stand', Qty: 1, Order: ORD-20260311033039868898
+[2026-03-11 03:30:39] [InventoryAgent] Confirmed 'Laptop Stand'. Deducted 1. Remaining: 777
+[2026-03-11 03:30:39] [InventoryAgent] Stock check — Product: 'Wireless Mouse', Qty: 1, Order: ORD-20260311033039870567
+[2026-03-11 03:30:39] [InventoryAgent] Confirmed 'Wireless Mouse'. Deducted 1. Remaining: 996
+[2026-03-11 03:30:39] [InventoryAgent] Stock check — Product: 'Portable Charger', Qty: 1, Order: ORD-20260311033039872403
+[2026-03-11 03:30:39] [InventoryAgent] Confirmed 'Portable Charger'. Deducted 1. Remaining: 1784
+[2026-03-11 03:30:39] [CustomerAgent] Order ORD-20260311033039868898 CONFIRMED. Remaining stock: 777
+[2026-03-11 03:30:39] [CustomerAgent] Order ORD-20260311033039870567 CONFIRMED. Remaining stock: 996
+[2026-03-11 03:30:39] [CustomerAgent] Order ORD-20260311033039872403 CONFIRMED. Remaining stock: 1784
+[2026-03-11 03:30:39] [RecommendationAgent] Order event — Customer: customer_ama, Product: 'Laptop Stand', Order: ORD-20260311033039868898
+[2026-03-11 03:30:39] [RecommendationAgent] Recommending to customer_ama: USB Hub, Wireless Mouse, Laptop Bag
+[2026-03-11 03:30:39] [RecommendationAgent] Recommendation sent for order ORD-20260311033039868898.
+[2026-03-11 03:30:39] [RecommendationAgent] Order event — Customer: customer_kofi, Product: 'Wireless Mouse', Order: ORD-20260311033039870567
+[2026-03-11 03:30:39] [RecommendationAgent] Recommending to customer_kofi: Laptop Stand, USB Hub, Mouse Pad
+[2026-03-11 03:30:39] [RecommendationAgent] Recommendation sent for order ORD-20260311033039870567.
+[2026-03-11 03:30:39] [RecommendationAgent] Order event — Customer: customer_abena, Product: 'Portable Charger', Order: ORD-20260311033039872403
+[2026-03-11 03:30:39] [RecommendationAgent] Recommending to customer_abena: Wireless Headphones, USB Cable, Phone Stand
+[2026-03-11 03:30:39] [RecommendationAgent] Recommendation sent for order ORD-20260311033039872403.
+[2026-03-11 03:30:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:30:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:31:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:31:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:31:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:31:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:31:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:31:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:31:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:31:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:32:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:32:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:32:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:32:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:32:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:32:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:32:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:32:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:33:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:33:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:33:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:33:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:33:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:33:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:33:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:33:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:34:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:34:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:34:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:34:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:34:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:34:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:34:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:34:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:35:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:35:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:35:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:35:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:35:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:35:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:35:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:35:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:36:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:36:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:36:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:36:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:36:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:36:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:36:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:36:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:37:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:37:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:37:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:37:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:37:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:37:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:37:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:37:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:38:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:38:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:38:04] [RecommendationAgent] RecommendationAgent (memory-enhanced) started and ready.
+[2026-03-11 03:38:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:38:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:38:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:38:31] [InventoryAgent] All stock levels healthy.
+
+=== Simulation run: 2026-03-11 03:38:44.649027 ===
+[2026-03-11 03:38:44] [CustomerAgent] Order received — Customer: customer_ama, Product: 'Wireless Headphones', ID: ORD-20260311033844885654
+[2026-03-11 03:38:44] [CustomerAgent] Stock check sent for order ORD-20260311033844885654.
+[2026-03-11 03:38:44] [InventoryAgent] Stock check — Product: 'Wireless Headphones', Qty: 1, Order: ORD-20260311033844885654
+[2026-03-11 03:38:44] [InventoryAgent] Confirmed 'Wireless Headphones'. Deducted 1. Remaining: 1265
+[2026-03-11 03:38:44] [CustomerAgent] Order ORD-20260311033844885654 CONFIRMED. Remaining stock: 1265
+[2026-03-11 03:38:44] [RecommendationAgent] Order event — Customer: customer_ama, Product: 'Wireless Headphones', Order: ORD-20260311033844885654
+[2026-03-11 03:38:44] [RecommendationAgent] Belief updated — customer_ama purchase history: ['Wireless Headphones']
+[2026-03-11 03:38:44] [RecommendationAgent] Scored candidates for customer_ama: [('Phone Stand', 1), ('Portable Charger', 1), ('Carry Case', 1)]
+[2026-03-11 03:38:44] [RecommendationAgent] Smart recommendations for customer_ama: Phone Stand, Portable Charger, Carry Case
+[2026-03-11 03:38:44] [RecommendationAgent] Recommendation sent for order ORD-20260311033844885654.
+[2026-03-11 03:38:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:38:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:38:48] [CustomerAgent] Order received — Customer: customer_kofi, Product: 'Gaming Keyboard', ID: ORD-20260311033848879809
+[2026-03-11 03:38:48] [CustomerAgent] Stock check sent for order ORD-20260311033848879809.
+[2026-03-11 03:38:48] [InventoryAgent] Stock check — Product: 'Gaming Keyboard', Qty: 1, Order: ORD-20260311033848879809
+[2026-03-11 03:38:48] [InventoryAgent] Confirmed 'Gaming Keyboard'. Deducted 1. Remaining: 558
+[2026-03-11 03:38:48] [CustomerAgent] Order ORD-20260311033848879809 CONFIRMED. Remaining stock: 558
+[2026-03-11 03:38:48] [RecommendationAgent] Order event — Customer: customer_kofi, Product: 'Gaming Keyboard', Order: ORD-20260311033848879809
+[2026-03-11 03:38:48] [RecommendationAgent] Belief updated — customer_kofi purchase history: ['Gaming Keyboard']
+[2026-03-11 03:38:48] [RecommendationAgent] Scored candidates for customer_kofi: [('Gaming Mouse', 1), ('Mouse Pad', 1), ('Monitor Light', 1)]
+[2026-03-11 03:38:48] [RecommendationAgent] Smart recommendations for customer_kofi: Gaming Mouse, Mouse Pad, Monitor Light
+[2026-03-11 03:38:48] [RecommendationAgent] Recommendation sent for order ORD-20260311033848879809.
+[2026-03-11 03:39:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:39:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:39:11] [CustomerAgent] Order received — Customer: customer_ama, Product: 'Laptop Stand', ID: ORD-20260311033911892359
+[2026-03-11 03:39:11] [CustomerAgent] Stock check sent for order ORD-20260311033911892359.
+[2026-03-11 03:39:11] [CustomerAgent] Order received — Customer: customer_kofi, Product: 'Wireless Mouse', ID: ORD-20260311033911894691
+[2026-03-11 03:39:11] [CustomerAgent] Stock check sent for order ORD-20260311033911894691.
+[2026-03-11 03:39:11] [CustomerAgent] Order received — Customer: customer_abena, Product: 'Portable Charger', ID: ORD-20260311033911898354
+[2026-03-11 03:39:11] [CustomerAgent] Stock check sent for order ORD-20260311033911898354.
+[2026-03-11 03:39:11] [InventoryAgent] Stock check — Product: 'Laptop Stand', Qty: 1, Order: ORD-20260311033911892359
+[2026-03-11 03:39:11] [InventoryAgent] Confirmed 'Laptop Stand'. Deducted 1. Remaining: 776
+[2026-03-11 03:39:11] [InventoryAgent] Stock check — Product: 'Wireless Mouse', Qty: 1, Order: ORD-20260311033911894691
+[2026-03-11 03:39:11] [InventoryAgent] Confirmed 'Wireless Mouse'. Deducted 1. Remaining: 995
+[2026-03-11 03:39:11] [InventoryAgent] Stock check — Product: 'Portable Charger', Qty: 1, Order: ORD-20260311033911898354
+[2026-03-11 03:39:11] [InventoryAgent] Confirmed 'Portable Charger'. Deducted 1. Remaining: 1783
+[2026-03-11 03:39:11] [CustomerAgent] Order ORD-20260311033911892359 CONFIRMED. Remaining stock: 776
+[2026-03-11 03:39:11] [CustomerAgent] Order ORD-20260311033911894691 CONFIRMED. Remaining stock: 995
+[2026-03-11 03:39:11] [CustomerAgent] Order ORD-20260311033911898354 CONFIRMED. Remaining stock: 1783
+[2026-03-11 03:39:11] [RecommendationAgent] Order event — Customer: customer_ama, Product: 'Laptop Stand', Order: ORD-20260311033911892359
+[2026-03-11 03:39:11] [RecommendationAgent] Belief updated — customer_ama purchase history: ['Wireless Headphones', 'Laptop Stand']
+[2026-03-11 03:39:11] [RecommendationAgent] Scored candidates for customer_ama: [('USB Hub', 1), ('Wireless Mouse', 1), ('Laptop Bag', 1)]
+[2026-03-11 03:39:11] [RecommendationAgent] Smart recommendations for customer_ama: USB Hub, Wireless Mouse, Laptop Bag
+[2026-03-11 03:39:11] [RecommendationAgent] Recommendation sent for order ORD-20260311033911892359.
+[2026-03-11 03:39:11] [RecommendationAgent] Order event — Customer: customer_kofi, Product: 'Wireless Mouse', Order: ORD-20260311033911894691
+[2026-03-11 03:39:11] [RecommendationAgent] Belief updated — customer_kofi purchase history: ['Gaming Keyboard', 'Wireless Mouse']
+[2026-03-11 03:39:11] [RecommendationAgent] Scored candidates for customer_kofi: [('Laptop Stand', 2), ('USB Hub', 1), ('Mouse Pad', 1)]
+[2026-03-11 03:39:11] [RecommendationAgent] Smart recommendations for customer_kofi: Laptop Stand, USB Hub, Mouse Pad
+[2026-03-11 03:39:11] [RecommendationAgent] Recommendation sent for order ORD-20260311033911894691.
+[2026-03-11 03:39:11] [RecommendationAgent] Order event — Customer: customer_abena, Product: 'Portable Charger', Order: ORD-20260311033911898354
+[2026-03-11 03:39:11] [RecommendationAgent] Belief updated — customer_abena purchase history: ['Portable Charger']
+[2026-03-11 03:39:11] [RecommendationAgent] Scored candidates for customer_abena: [('Wireless Headphones', 2), ('USB Cable', 1), ('Phone Stand', 1)]
+[2026-03-11 03:39:11] [RecommendationAgent] Smart recommendations for customer_abena: Wireless Headphones, USB Cable, Phone Stand
+[2026-03-11 03:39:11] [RecommendationAgent] Recommendation sent for order ORD-20260311033911898354.
+[2026-03-11 03:39:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:39:16] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:39:31] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:39:31] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:39:46] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:39:46] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:40:01] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:40:01] [InventoryAgent] All stock levels healthy.
+[2026-03-11 03:40:16] [InventoryAgent] Periodic stock check running...
+[2026-03-11 03:40:16] [InventoryAgent] All stock levels healthy.

@@ -1,0 +1,15 @@
+{
+  "customers": {
+    "customer_ama": [
+      "Wireless Headphones",
+      "Laptop Stand"
+    ],
+    "customer_kofi": [
+      "Gaming Keyboard",
+      "Wireless Mouse"
+    ],
+    "customer_abena": [
+      "Portable Charger"
+    ]
+  }
+}

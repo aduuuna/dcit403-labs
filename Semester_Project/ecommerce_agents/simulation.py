@@ -1,182 +1,124 @@
 """
 simulation.py — DCIT 403 Semester Project
 ------------------------------------------
-This script starts all three agents and runs through the 5 scenarios
-defined in Phase 1 of the Prometheus design.
+This script acts as the "customer" — it sends order requests
+to the CustomerAgent which is already running in another terminal.
 
-HOW TO RUN:
-  1. Make sure ejabberd is running (see README.md)
-  2. Make sure all 3 XMPP accounts exist on the server
-  3. Run:  python simulation.py
-
-XMPP ACCOUNTS NEEDED:
-  customer@172.17.0.2  / password123
-  inventory@172.17.0.2 / password123
-  recommender@172.17.0.2 / password123
+HOW TO USE:
+  Terminal 1: python inventory_agent.py
+  Terminal 2: python recommender_agent.py
+  Terminal 3: python customer_agent.py
+  Terminal 4: python simulation.py        ← this file
 """
 
 import asyncio
-import time
+import json
 from datetime import datetime
 from spade.agent import Agent
+from spade.behaviour import OneShotBehaviour
 from spade.message import Message
 
-from customer_agent    import CustomerAgent
-from inventory_agent   import InventoryAgent
-from recommender_agent import RecommendationAgent
-
-# ── XMPP credentials ─────────────────────────────────────────────────────────
-CUSTOMER_JID    = "customer@172.17.0.2"
-INVENTORY_JID   = "inventory@172.17.0.2"
-RECOMMENDER_JID = "recommender@172.17.0.2"
-PASSWORD        = "password123"
-
-LOG_FILE = "event_log.txt"
+CUSTOMER_JID = "customer@localhost"
+LOG_FILE     = "event_log.txt"
 
 
-class SimulationAgent(Agent):
-    async def setup(self):
-        log("SimulationAgent started and ready.")
-
-
-def log(message: str):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = f"[{timestamp}] [Simulation] {message}"
-    print(entry)
-    with open(LOG_FILE, "a") as f:
-        f.write(entry + "\n")
-
-
-def print_banner(title: str):
+def print_banner(title):
     print(f"\n{'='*60}")
     print(f"  {title}")
     print(f"{'='*60}")
 
 
-async def send_order(agent, customer_id: str, product: str, quantity: int = 1):
-    """
-    Helper: send an ORDER_REQUEST message to the CustomerAgent on behalf
-    of a simulated customer.
-    """
-    msg = Message(to=CUSTOMER_JID)
-    msg.set_metadata("performative", "request")
-    msg.body = (
-        f"type:ORDER_REQUEST|"
-        f"customer_id:{customer_id}|"
-        f"product:{product}|"
-        f"quantity:{quantity}"
-    )
-    await agent.send(msg)
+class RunScenariosBehaviour(OneShotBehaviour):
+    """Sends all 5 scenario messages then stops."""
+
+    async def run(self):
+        # ── Scenario 1: Successful order ─────────────────────────────────────
+        print_banner("SCENARIO 1 — Successful Order (Wireless Headphones)")
+        msg = Message(to=CUSTOMER_JID)
+        msg.set_metadata("performative", "request")
+        msg.body = "type:ORDER_REQUEST|customer_id:customer_ama|product:Wireless Headphones|quantity:1"
+        await self.send(msg)
+        await asyncio.sleep(4)
+
+        # ── Scenario 2: Out of stock ──────────────────────────────────────────
+        print_banner("SCENARIO 2 — Out-of-Stock Order (Gaming Keyboard)")
+        msg = Message(to=CUSTOMER_JID)
+        msg.set_metadata("performative", "request")
+        msg.body = "type:ORDER_REQUEST|customer_id:customer_kofi|product:Gaming Keyboard|quantity:1"
+        await self.send(msg)
+        await asyncio.sleep(4)
+
+        # ── Scenario 3: Low stock alert fires automatically in InventoryAgent ─
+        print_banner("SCENARIO 3 — Low-Stock Alert (watch inventory_agent terminal)")
+        print("  The InventoryAgent monitors stock every 15 seconds automatically.")
+        print("  USB Hub has 2 units (threshold: 3) → alert will fire shortly.")
+        print("  Watch your inventory_agent.py terminal for the ⚠️  alert.\n")
+        await asyncio.sleep(16)
+
+        # ── Scenario 4: Status query ──────────────────────────────────────────
+        print_banner("SCENARIO 4 — Order Status Query")
+        with open("orders.json") as f:
+            orders_data = json.load(f)
+
+        if orders_data["orders"]:
+            latest_id = orders_data["orders"][-1]["order_id"]
+            print(f"  Querying status for most recent order: {latest_id}")
+            msg = Message(to=CUSTOMER_JID)
+            msg.set_metadata("performative", "request")
+            msg.body = f"type:STATUS_QUERY|order_id:{latest_id}"
+            await self.send(msg)
+        else:
+            print("  No orders placed yet — skipping status query.")
+        await asyncio.sleep(3)
+
+        # ── Scenario 5: Three concurrent orders ──────────────────────────────
+        print_banner("SCENARIO 5 — Three Concurrent Orders")
+
+        msg1 = Message(to=CUSTOMER_JID)
+        msg1.set_metadata("performative", "request")
+        msg1.body = "type:ORDER_REQUEST|customer_id:customer_ama|product:Laptop Stand|quantity:1"
+
+        msg2 = Message(to=CUSTOMER_JID)
+        msg2.set_metadata("performative", "request")
+        msg2.body = "type:ORDER_REQUEST|customer_id:customer_kofi|product:Wireless Mouse|quantity:1"
+
+        msg3 = Message(to=CUSTOMER_JID)
+        msg3.set_metadata("performative", "request")
+        msg3.body = "type:ORDER_REQUEST|customer_id:customer_abena|product:Portable Charger|quantity:1"
+
+        # Send all three at the same time
+        await asyncio.gather(
+            self.send(msg1),
+            self.send(msg2),
+            self.send(msg3),
+        )
+        await asyncio.sleep(6)
+
+        print_banner("All 5 Scenarios Sent!")
+        print("  Check each agent terminal to see their responses.")
+        print("  Check event_log.txt for the full timestamped log.\n")
 
 
-async def send_status_query(agent, order_id: str):
-    """
-    Helper: send a STATUS_QUERY to the CustomerAgent.
-    Note: In a real system the customer would query directly.
-    Here the simulation agent sends it to trigger the behaviour.
-    """
-    msg = Message(to=CUSTOMER_JID)
-    msg.set_metadata("performative", "request")
-    msg.body = f"type:STATUS_QUERY|order_id:{order_id}"
-    await agent.send(msg)
+class SimulationAgent(Agent):
+    async def setup(self):
+        print("Simulation agent started — sending scenarios...")
+        self.add_behaviour(RunScenariosBehaviour())
 
-
-# ── Main simulation ───────────────────────────────────────────────────────────
 
 async def main():
-    # Clear old log
-    with open(LOG_FILE, "w") as f:
-        f.write(f"=== E-Commerce Agent Simulation Started: {datetime.now()} ===\n\n")
+    with open(LOG_FILE, "a") as f:
+        f.write(f"\n=== Simulation run: {datetime.now()} ===\n")
 
-    print_banner("E-Commerce Intelligent Agent System — DCIT 403")
-    print("Starting all agents...\n")
+    print_banner("E-Commerce Agent System — DCIT 403 Simulation")
+    print("Make sure all 3 agents are running in other terminals first!\n")
 
-    # ── Start all three agents ────────────────────────────────────────────────
-    inventory_agent   = InventoryAgent(INVENTORY_JID,   PASSWORD)
-    recommender_agent = RecommendationAgent(RECOMMENDER_JID, PASSWORD)
-    customer_agent    = CustomerAgent(CUSTOMER_JID, PASSWORD)
-    simulation_agent  = SimulationAgent("simulation@172.17.0.2", PASSWORD)
+    sim = SimulationAgent("simulation@localhost", "password123")
+    await sim.start(auto_register=True)
 
-    await inventory_agent.start(auto_register=True)
-    await recommender_agent.start(auto_register=True)
-    await customer_agent.start(auto_register=True)
-    await simulation_agent.start(auto_register=True)
-
-    print("All agents online. Waiting for them to fully initialise...\n")
-    await asyncio.sleep(3)
-
-    # ═════════════════════════════════════════════════════════════════════════
-    # SCENARIO 1 — Successful order: Wireless Headphones (in stock)
-    # ═════════════════════════════════════════════════════════════════════════
-    print_banner("SCENARIO 1 — Successful Order (Wireless Headphones)")
-    log("Scenario 1: Ama orders Wireless Headphones")
-
-    await send_order(simulation_agent, "customer_ama", "Wireless Headphones")
-    await asyncio.sleep(4)  # Wait for the full order → stock check → recommend flow
-
-    # ═════════════════════════════════════════════════════════════════════════
-    # SCENARIO 2 — Out-of-stock: Gaming Keyboard (0 units)
-    # ═════════════════════════════════════════════════════════════════════════
-    print_banner("SCENARIO 2 — Out-of-Stock Order (Gaming Keyboard)")
-    log("Scenario 2: Kofi attempts to order Gaming Keyboard (0 in stock)")
-    await send_order(simulation_agent, "customer_kofi", "Gaming Keyboard")
-    await asyncio.sleep(3)
-
-    # ═════════════════════════════════════════════════════════════════════════
-    # SCENARIO 3 — Low-stock alert fires autonomously
-    # The USB Hub has only 2 units and a threshold of 3
-    # The InventoryAgent's PeriodicBehaviour will catch this automatically.
-    # ═════════════════════════════════════════════════════════════════════════
-    print_banner("SCENARIO 3 — Low-Stock Alert (Autonomous, USB Hub)")
-    log("Scenario 3: Waiting for InventoryAgent periodic check to fire low-stock alert...")
-    print("  (The InventoryAgent monitors stock every 15 seconds automatically.)")
-    print("  USB Hub has 2 units — below its threshold of 3.")
-    print("  Gaming Keyboard has 0 units — below its threshold of 2.")
-    print("  Watch for the ⚠️  LOW_STOCK_ALERT messages above...\n")
-    await asyncio.sleep(16)  # Wait for periodic behaviour to fire
-
-    # ═════════════════════════════════════════════════════════════════════════
-    # SCENARIO 4 — Status query for the order placed in Scenario 1
-    # ═════════════════════════════════════════════════════════════════════════
-    print_banner("SCENARIO 4 — Order Status Query")
-    log("Scenario 4: Ama queries the status of her order")
-
-    # Get the most recent order ID from orders.json
-    import json
-    with open("orders.json") as f:
-        orders_data = json.load(f)
-
-    if orders_data["orders"]:
-        latest_order_id = orders_data["orders"][-1]["order_id"]
-        log(f"Querying status for order: {latest_order_id}")
-        await send_status_query(simulation_agent, latest_order_id)
-    else:
-        print("  No orders found to query.\n")
-
-    await asyncio.sleep(2)
-
-    # ═════════════════════════════════════════════════════════════════════════
-    # SCENARIO 5 — Three concurrent orders
-    # ═════════════════════════════════════════════════════════════════════════
-    print_banner("SCENARIO 5 — Multiple Concurrent Orders (3 Customers)")
-    log("Scenario 5: Ama, Kofi, and Abena all place orders simultaneously")
-
-    await asyncio.gather(
-        send_order(simulation_agent, "customer_ama",   "Laptop Stand"),
-        send_order(simulation_agent, "customer_kofi",  "Wireless Mouse"),
-        send_order(simulation_agent, "customer_abena", "Portable Charger"),
-    )
-    await asyncio.sleep(6)  # Allow all three flows to complete
-
-    # ── Wrap up ───────────────────────────────────────────────────────────────
-    print_banner("Simulation Complete")
-    log("All 5 scenarios completed. Shutting down agents.")
-    print("\nCheck event_log.txt for the full timestamped log of all events.\n")
-
-    await customer_agent.stop()
-    await inventory_agent.stop()
-    await recommender_agent.stop()
-    await simulation_agent.stop()
+    # Wait for all scenarios to complete then shut down
+    await asyncio.sleep(35)
+    await sim.stop()
+    print("Simulation complete.")
 
 
 if __name__ == "__main__":

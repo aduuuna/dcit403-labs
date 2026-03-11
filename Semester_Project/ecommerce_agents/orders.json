@@ -1,3 +1,84 @@
 {
-  "orders": []
+  "orders": [
+    {
+      "order_id": "ORD-20260311033012884968",
+      "customer_id": "customer_ama",
+      "product": "Wireless Headphones",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:30:12.899850"
+    },
+    {
+      "order_id": "ORD-20260311033016858556",
+      "customer_id": "customer_kofi",
+      "product": "Gaming Keyboard",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:30:16.866587"
+    },
+    {
+      "order_id": "ORD-20260311033039868898",
+      "customer_id": "customer_ama",
+      "product": "Laptop Stand",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:30:39.886790"
+    },
+    {
+      "order_id": "ORD-20260311033039870567",
+      "customer_id": "customer_kofi",
+      "product": "Wireless Mouse",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:30:39.890139"
+    },
+    {
+      "order_id": "ORD-20260311033039872403",
+      "customer_id": "customer_abena",
+      "product": "Portable Charger",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:30:39.894128"
+    },
+    {
+      "order_id": "ORD-20260311033844885654",
+      "customer_id": "customer_ama",
+      "product": "Wireless Headphones",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:38:44.891741"
+    },
+    {
+      "order_id": "ORD-20260311033848879809",
+      "customer_id": "customer_kofi",
+      "product": "Gaming Keyboard",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:38:48.887601"
+    },
+    {
+      "order_id": "ORD-20260311033911892359",
+      "customer_id": "customer_ama",
+      "product": "Laptop Stand",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:39:11.910680"
+    },
+    {
+      "order_id": "ORD-20260311033911894691",
+      "customer_id": "customer_kofi",
+      "product": "Wireless Mouse",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:39:11.912671"
+    },
+    {
+      "order_id": "ORD-20260311033911898354",
+      "customer_id": "customer_abena",
+      "product": "Portable Charger",
+      "quantity": 1,
+      "status": "Processing",
+      "timestamp": "2026-03-11T03:39:11.916953"
+    }
+  ]
 }

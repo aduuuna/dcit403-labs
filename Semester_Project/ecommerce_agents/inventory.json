@@ -3,50 +3,74 @@
     {
       "product_id": "prod_001",
       "name": "Wireless Headphones",
-      "stock": 1267,
-      "price": 350.00,
+      "stock": 1265,
+      "price": 350.0,
       "low_stock_threshold": 3,
-      "related_products": ["Phone Stand", "Portable Charger", "Carry Case"]
+      "related_products": [
+        "Phone Stand",
+        "Portable Charger",
+        "Carry Case"
+      ]
     },
     {
       "product_id": "prod_002",
       "name": "Laptop Stand",
-      "stock": 778,
-      "price": 120.00,
+      "stock": 776,
+      "price": 120.0,
       "low_stock_threshold": 2,
-      "related_products": ["USB Hub", "Wireless Mouse", "Laptop Bag"]
+      "related_products": [
+        "USB Hub",
+        "Wireless Mouse",
+        "Laptop Bag"
+      ]
     },
     {
       "product_id": "prod_003",
       "name": "USB Hub",
       "stock": 275,
-      "price": 85.00,
+      "price": 85.0,
       "low_stock_threshold": 3,
-      "related_products": ["Laptop Stand", "Wireless Mouse", "HDMI Cable"]
+      "related_products": [
+        "Laptop Stand",
+        "Wireless Mouse",
+        "HDMI Cable"
+      ]
     },
     {
       "product_id": "prod_004",
       "name": "Gaming Keyboard",
-      "stock": 560,
-      "price": 420.00,
+      "stock": 558,
+      "price": 420.0,
       "low_stock_threshold": 2,
-      "related_products": ["Gaming Mouse", "Mouse Pad", "Monitor Light"]
+      "related_products": [
+        "Gaming Mouse",
+        "Mouse Pad",
+        "Monitor Light"
+      ]
     },
     {
       "product_id": "prod_005",
       "name": "Portable Charger",
-      "stock": 1785,
-      "price": 200.00,
+      "stock": 1783,
+      "price": 200.0,
       "low_stock_threshold": 4,
-      "related_products": ["Wireless Headphones", "USB Cable", "Phone Stand"]
+      "related_products": [
+        "Wireless Headphones",
+        "USB Cable",
+        "Phone Stand"
+      ]
     },
     {
       "product_id": "prod_006",
       "name": "Wireless Mouse",
-      "stock": 997,
-      "price": 145.00,
+      "stock": 995,
+      "price": 145.0,
       "low_stock_threshold": 3,
-      "related_products": ["Laptop Stand", "USB Hub", "Mouse Pad"]
+      "related_products": [
+        "Laptop Stand",
+        "USB Hub",
+        "Mouse Pad"
+      ]
     }
   ]
 }
